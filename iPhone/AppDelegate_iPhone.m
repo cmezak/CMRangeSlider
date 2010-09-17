@@ -38,6 +38,14 @@
 	[slider setSuperRangeTrackImage:image];
 	
 	[slider addTarget:self action:@selector(report:) forControlEvents:UIControlEventValueChanged];
+	
+	reportLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 30, 310, 30)];
+	reportLabel.adjustsFontSizeToFitWidth = YES;
+	reportLabel.textAlignment = UITextAlignmentCenter;
+	[window addSubview:reportLabel];
+	NSString *report = [NSString stringWithFormat:@"current slider range is %f to %f", slider.min, slider.max];
+	reportLabel.text = report;
+	
     [window addSubview:slider];
     [window makeKeyAndVisible];
     
@@ -45,7 +53,9 @@
 }
 
 - (void)report:(RangeSlider *)sender {
-	NSLog(@"current slider range is %f to %f", sender.min, sender.max);
+	NSString *report = [NSString stringWithFormat:@"current slider range is %f to %f", sender.min, sender.max];
+	reportLabel.text = report;
+	NSLog(report);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

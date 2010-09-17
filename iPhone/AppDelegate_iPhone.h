@@ -11,6 +11,7 @@
 @interface AppDelegate_iPhone : NSObject <UIApplicationDelegate> {
     UIWindow *window;
 	RangeSlider *slider;
+	UILabel *reportLabel;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
