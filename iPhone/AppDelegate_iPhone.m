@@ -18,16 +18,16 @@
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    
-    // Override point for customization after application launch.
+    	
+	slider = [[RangeSlider alloc] initWithFrame:CGRectMake(10, 100, 300, 30)]; // the slider enforces a height of 30, although I'm not sure that this is necessary
 	
-	slider = [[RangeSlider alloc] initWithFrame:CGRectMake(10, 100, 300, 30)];
+	slider.minimumRangeLength = 0.3; // this property enforces a minimum range size. By default it is set to 0.0
 	
-	slider.minimumRangeLength = 0.3;
-	
-	[slider setMinThumbImage:[UIImage imageNamed:@"sliderControl.png"]];
+	[slider setMinThumbImage:[UIImage imageNamed:@"sliderControl.png"]]; // the two thumb controls are given custom images
 	[slider setMaxThumbImage:[UIImage imageNamed:@"sliderControl.png"]];
-	UIImage *image;
+	
+	
+	UIImage *image; // there are three track images, one for the region to the left of the minimum, one for the region within the range, and one for the region to the right of the maximum
 	
 	image = [UIImage imageNamed:@"subRangeTrack.png"];
 	image = [image stretchableImageWithLeftCapWidth:image.size.width-2 topCapHeight:3];
@@ -40,9 +40,10 @@
 	image = [image stretchableImageWithLeftCapWidth:3 topCapHeight:0];
 	[slider setSuperRangeTrackImage:image];
 	
-	[slider addTarget:self action:@selector(report:) forControlEvents:UIControlEventValueChanged];
+	[slider addTarget:self action:@selector(report:) forControlEvents:UIControlEventValueChanged]; // The slider sends actions when the value of the minimum or maximum changes
 	
-	reportLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 30, 310, 30)];
+	
+	reportLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 30, 310, 30)]; // a label to see the values of the slider in this demo
 	reportLabel.adjustsFontSizeToFitWidth = YES;
 	reportLabel.textAlignment = UITextAlignmentCenter;
 	[window addSubview:reportLabel];
