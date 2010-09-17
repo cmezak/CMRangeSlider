@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'RangeSlider' target in the 'RangeSlider' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif

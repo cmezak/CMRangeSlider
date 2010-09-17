@@ -1,0 +1,3 @@
+This is a UIControl subclass that is similar to Apple's UISlider view, except instead of tracking a single float value between 0 and 1, this control uses two thumb controls to track a range of float values (a min and max) between 0 and 1.
+
+Check out the code for comments to see how to use it. Not that complicated.  Not a big deal. Useful, though.
