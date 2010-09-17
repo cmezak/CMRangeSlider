@@ -12,13 +12,13 @@
 @interface RangeSlider : UIControl {
 
 	CGFloat min, max; //the min and max of the range	
+	CGFloat minimumRangeLength; //the minimum allowed range size
 	
 	UIImageView *minSlider, *maxSlider, *backgroundImageView, *subRangeTrackImageView, *superRangeTrackImageView, *inRangeTrackImageView; // the sliders representing the min and max, and a background view;
-	
 	UIView *trackingSlider; // a variable to keep track of which slider we are tracking (if either)
 }
 
-@property (nonatomic, readonly) CGFloat min, max;
+@property (nonatomic) CGFloat min, max, minimumRangeLength;
 - (void)setMinThumbImage:(UIImage *)image;
 - (void)setMaxThumbImage:(UIImage *)image;
 - (void)setSuperRangeTrackImage:(UIImage *)image;

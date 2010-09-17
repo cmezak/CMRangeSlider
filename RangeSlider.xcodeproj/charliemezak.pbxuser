@@ -8,16 +8,16 @@
 	};
 	2860E325111B887F00E27156 /* AppDelegate_iPhone.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1085, 481}}";
-			sepNavSelRange = "{307, 0}";
-			sepNavVisRange = "{0, 375}";
+			sepNavIntBoundsRect = "{{0, 0}, {1085, 476}}";
+			sepNavSelRange = "{330, 0}";
+			sepNavVisRange = "{0, 398}";
 		};
 	};
 	2860E326111B887F00E27156 /* AppDelegate_iPhone.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1965, 1378}}";
-			sepNavSelRange = "{1436, 0}";
-			sepNavVisRange = "{1974, 1253}";
+			sepNavIntBoundsRect = "{{0, 0}, {1085, 1612}}";
+			sepNavSelRange = "{619, 0}";
+			sepNavVisRange = "{265, 1424}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -38,7 +38,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					907,
+					1473,
 					20,
 					48,
 					43,
@@ -130,6 +130,19 @@
 			8971F9E11242F6E50068890B = 8971F9E11242F6E50068890B /* PBXTextBookmark */;
 			8971F9E21242F6E50068890B = 8971F9E21242F6E50068890B /* PBXTextBookmark */;
 			89E5D10612430EE70085821E /* PBXTextBookmark */ = 89E5D10612430EE70085821E /* PBXTextBookmark */;
+			89E5D11D124312C10085821E /* PBXTextBookmark */ = 89E5D11D124312C10085821E /* PBXTextBookmark */;
+			89E5D11E124312C10085821E /* PBXTextBookmark */ = 89E5D11E124312C10085821E /* PBXTextBookmark */;
+			89E5D11F124312C10085821E /* PBXTextBookmark */ = 89E5D11F124312C10085821E /* PBXTextBookmark */;
+			89E5D120124312C10085821E /* PBXTextBookmark */ = 89E5D120124312C10085821E /* PBXTextBookmark */;
+			89E5D121124312C10085821E /* PBXTextBookmark */ = 89E5D121124312C10085821E /* PBXTextBookmark */;
+			89E5D126124313830085821E /* PBXTextBookmark */ = 89E5D126124313830085821E /* PBXTextBookmark */;
+			89E5D12A124313A80085821E /* PBXTextBookmark */ = 89E5D12A124313A80085821E /* PBXTextBookmark */;
+			89E5D12B124313A80085821E /* PBXTextBookmark */ = 89E5D12B124313A80085821E /* PBXTextBookmark */;
+			89E5D12C124313A80085821E /* PBXTextBookmark */ = 89E5D12C124313A80085821E /* PBXTextBookmark */;
+			89E5D130124314C40085821E /* PBXTextBookmark */ = 89E5D130124314C40085821E /* PBXTextBookmark */;
+			89E5D131124314C40085821E /* PBXTextBookmark */ = 89E5D131124314C40085821E /* PBXTextBookmark */;
+			89E5D132124314C40085821E /* PBXTextBookmark */ = 89E5D132124314C40085821E /* PBXTextBookmark */;
+			89E5D136124315210085821E /* PBXTextBookmark */ = 89E5D136124315210085821E /* PBXTextBookmark */;
 			89EAAEC61242DC29002DBE09 = 89EAAEC61242DC29002DBE09 /* PBXTextBookmark */;
 			89EAAEC71242DC29002DBE09 = 89EAAEC71242DC29002DBE09 /* PBXTextBookmark */;
 			89EAAEC81242DC29002DBE09 = 89EAAEC81242DC29002DBE09 /* PBXTextBookmark */;
@@ -145,7 +158,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 89";
 		rLen = 0;
-		rLoc = 4262;
+		rLoc = 4730;
 		rType = 0;
 		vrLen = 1534;
 		vrLoc = 1398;
@@ -155,7 +168,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 40";
 		rLen = 0;
-		rLoc = 2036;
+		rLoc = 2084;
 		rType = 0;
 		vrLen = 974;
 		vrLoc = 498;
@@ -165,7 +178,7 @@
 		fRef = 89EAAEB01242D6B3002DBE09 /* RangeSlider.h */;
 		name = "RangeSlider.h: 21";
 		rLen = 0;
-		rLoc = 598;
+		rLoc = 648;
 		rType = 0;
 		vrLen = 547;
 		vrLoc = 0;
@@ -175,7 +188,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 36";
 		rLen = 0;
-		rLoc = 1471;
+		rLoc = 1519;
 		rType = 0;
 		vrLen = 1209;
 		vrLoc = 288;
@@ -215,7 +228,7 @@
 		fRef = 89EAAEB01242D6B3002DBE09 /* RangeSlider.h */;
 		name = "RangeSlider.h: 21";
 		rLen = 0;
-		rLoc = 598;
+		rLoc = 648;
 		rType = 0;
 		vrLen = 547;
 		vrLoc = 0;
@@ -225,7 +238,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 43";
 		rLen = 0;
-		rLoc = 1759;
+		rLoc = 1807;
 		rType = 0;
 		vrLen = 1353;
 		vrLoc = 317;
@@ -235,7 +248,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 43";
 		rLen = 0;
-		rLoc = 1759;
+		rLoc = 1807;
 		rType = 0;
 		vrLen = 1352;
 		vrLoc = 318;
@@ -249,7 +262,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 43";
 		rLen = 0;
-		rLoc = 1759;
+		rLoc = 1807;
 		rType = 0;
 		vrLen = 1352;
 		vrLoc = 318;
@@ -259,7 +272,7 @@
 		fRef = 2860E325111B887F00E27156 /* AppDelegate_iPhone.h */;
 		name = "AppDelegate_iPhone.h: 13";
 		rLen = 0;
-		rLoc = 307;
+		rLoc = 330;
 		rType = 0;
 		vrLen = 375;
 		vrLoc = 0;
@@ -279,7 +292,7 @@
 		fRef = 2860E326111B887F00E27156 /* AppDelegate_iPhone.m */;
 		name = "AppDelegate_iPhone.m: 26";
 		rLen = 0;
-		rLoc = 667;
+		rLoc = 705;
 		rType = 0;
 		vrLen = 1094;
 		vrLoc = 0;
@@ -289,7 +302,7 @@
 		fRef = 2860E326111B887F00E27156 /* AppDelegate_iPhone.m */;
 		name = "AppDelegate_iPhone.m: 26";
 		rLen = 0;
-		rLoc = 667;
+		rLoc = 705;
 		rType = 0;
 		vrLen = 1094;
 		vrLoc = 0;
@@ -299,7 +312,7 @@
 		fRef = 89EAAEB01242D6B3002DBE09 /* RangeSlider.h */;
 		name = "RangeSlider.h: 16";
 		rLen = 0;
-		rLoc = 301;
+		rLoc = 363;
 		rType = 0;
 		vrLen = 548;
 		vrLoc = 0;
@@ -309,7 +322,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 43";
 		rLen = 0;
-		rLoc = 1759;
+		rLoc = 1807;
 		rType = 0;
 		vrLen = 1355;
 		vrLoc = 317;
@@ -319,7 +332,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 64";
 		rLen = 0;
-		rLoc = 2323;
+		rLoc = 2371;
 		rType = 0;
 		vrLen = 1233;
 		vrLoc = 1079;
@@ -329,7 +342,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 46";
 		rLen = 0;
-		rLoc = 2036;
+		rLoc = 2084;
 		rType = 0;
 		vrLen = 1115;
 		vrLoc = 825;
@@ -339,7 +352,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 99";
 		rLen = 0;
-		rLoc = 4493;
+		rLoc = 5138;
 		rType = 0;
 		vrLen = 1882;
 		vrLoc = 2054;
@@ -349,7 +362,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 96";
 		rLen = 0;
-		rLoc = 4173;
+		rLoc = 4543;
 		rType = 0;
 		vrLen = 1857;
 		vrLoc = 2054;
@@ -359,7 +372,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 108";
 		rLen = 0;
-		rLoc = 5601;
+		rLoc = 6282;
 		rType = 0;
 		vrLen = 1615;
 		vrLoc = 2421;
@@ -369,7 +382,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 92";
 		rLen = 0;
-		rLoc = 4111;
+		rLoc = 4470;
 		rType = 0;
 		vrLen = 1583;
 		vrLoc = 2299;
@@ -379,7 +392,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 92";
 		rLen = 0;
-		rLoc = 4111;
+		rLoc = 4470;
 		rType = 0;
 		vrLen = 1583;
 		vrLoc = 2299;
@@ -389,7 +402,7 @@
 		fRef = 2860E326111B887F00E27156 /* AppDelegate_iPhone.m */;
 		name = "AppDelegate_iPhone.m: 27";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1213;
 		rType = 0;
 		vrLen = 1087;
 		vrLoc = 0;
@@ -399,7 +412,7 @@
 		fRef = 2860E326111B887F00E27156 /* AppDelegate_iPhone.m */;
 		name = "AppDelegate_iPhone.m: 27";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1213;
 		rType = 0;
 		vrLen = 1087;
 		vrLoc = 0;
@@ -409,7 +422,7 @@
 		fRef = 89EAAEB01242D6B3002DBE09 /* RangeSlider.h */;
 		name = "RangeSlider.h: 16";
 		rLen = 0;
-		rLoc = 301;
+		rLoc = 363;
 		rType = 0;
 		vrLen = 548;
 		vrLoc = 0;
@@ -419,7 +432,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 25";
 		rLen = 0;
-		rLoc = 607;
+		rLoc = 655;
 		rType = 0;
 		vrLen = 1049;
 		vrLoc = 40;
@@ -433,7 +446,7 @@
 		fRef = 2860E326111B887F00E27156 /* AppDelegate_iPhone.m */;
 		name = "AppDelegate_iPhone.m: 25";
 		rLen = 0;
-		rLoc = 602;
+		rLoc = 640;
 		rType = 0;
 		vrLen = 1688;
 		vrLoc = 265;
@@ -442,7 +455,7 @@
 		isa = PBXTextBookmark;
 		fRef = 89EAAEB01242D6B3002DBE09 /* RangeSlider.h */;
 		name = "RangeSlider.h: 12";
-		rLen = 394;
+		rLen = 454;
 		rLoc = 172;
 		rType = 0;
 		vrLen = 706;
@@ -463,7 +476,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 116";
 		rLen = 0;
-		rLoc = 4546;
+		rLoc = 5213;
 		rType = 0;
 		vrLen = 1712;
 		vrLoc = 2597;
@@ -494,7 +507,7 @@
 		fRef = 2860E326111B887F00E27156 /* AppDelegate_iPhone.m */;
 		name = "AppDelegate_iPhone.m: 29";
 		rLen = 0;
-		rLoc = 1174;
+		rLoc = 1212;
 		rType = 0;
 		vrLen = 1509;
 		vrLoc = 88;
@@ -504,7 +517,7 @@
 		fRef = 89EAAEB01242D6B3002DBE09 /* RangeSlider.h */;
 		name = "RangeSlider.h: 16";
 		rLen = 0;
-		rLoc = 375;
+		rLoc = 437;
 		rType = 0;
 		vrLen = 854;
 		vrLoc = 0;
@@ -610,7 +623,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 88";
 		rLen = 0;
-		rLoc = 2926;
+		rLoc = 2974;
 		rType = 0;
 		vrLen = 1356;
 		vrLoc = 1703;
@@ -620,7 +633,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 126";
 		rLen = 0;
-		rLoc = 4798;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 2137;
 		vrLoc = 3201;
@@ -630,7 +643,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 128";
 		rLen = 0;
-		rLoc = 5241;
+		rLoc = 5908;
 		rType = 0;
 		vrLen = 1990;
 		vrLoc = 3416;
@@ -640,7 +653,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 80";
 		rLen = 0;
-		rLoc = 2442;
+		rLoc = 2490;
 		rType = 0;
 		vrLen = 1484;
 		vrLoc = 1652;
@@ -650,7 +663,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 79";
 		rLen = 0;
-		rLoc = 2435;
+		rLoc = 2483;
 		rType = 0;
 		vrLen = 1490;
 		vrLoc = 1652;
@@ -660,7 +673,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 79";
 		rLen = 0;
-		rLoc = 2435;
+		rLoc = 2483;
 		rType = 0;
 		vrLen = 1447;
 		vrLoc = 1652;
@@ -674,7 +687,7 @@
 		fRef = 2860E326111B887F00E27156 /* AppDelegate_iPhone.m */;
 		name = "AppDelegate_iPhone.m: 29";
 		rLen = 0;
-		rLoc = 1174;
+		rLoc = 1212;
 		rType = 0;
 		vrLen = 1229;
 		vrLoc = 88;
@@ -688,7 +701,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 79";
 		rLen = 0;
-		rLoc = 2435;
+		rLoc = 2483;
 		rType = 0;
 		vrLen = 1447;
 		vrLoc = 1652;
@@ -698,7 +711,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 79";
 		rLen = 0;
-		rLoc = 2435;
+		rLoc = 2483;
 		rType = 0;
 		vrLen = 1396;
 		vrLoc = 1703;
@@ -708,7 +721,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 79";
 		rLen = 0;
-		rLoc = 2435;
+		rLoc = 2483;
 		rType = 0;
 		vrLen = 1396;
 		vrLoc = 1703;
@@ -718,7 +731,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 79";
 		rLen = 0;
-		rLoc = 2435;
+		rLoc = 2483;
 		rType = 0;
 		vrLen = 1396;
 		vrLoc = 1703;
@@ -728,7 +741,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 79";
 		rLen = 0;
-		rLoc = 2441;
+		rLoc = 2489;
 		rType = 0;
 		vrLen = 1457;
 		vrLoc = 1472;
@@ -738,7 +751,7 @@
 		fRef = 89EAAEB01242D6B3002DBE09 /* RangeSlider.h */;
 		name = "RangeSlider.h: 16";
 		rLen = 0;
-		rLoc = 375;
+		rLoc = 437;
 		rType = 0;
 		vrLen = 854;
 		vrLoc = 0;
@@ -748,7 +761,7 @@
 		fRef = 2860E326111B887F00E27156 /* AppDelegate_iPhone.m */;
 		name = "AppDelegate_iPhone.m: 32";
 		rLen = 0;
-		rLoc = 970;
+		rLoc = 1008;
 		rType = 0;
 		vrLen = 1259;
 		vrLoc = 88;
@@ -758,7 +771,7 @@
 		fRef = 89EAAEB01242D6B3002DBE09 /* RangeSlider.h */;
 		name = "RangeSlider.h: 16";
 		rLen = 0;
-		rLoc = 375;
+		rLoc = 437;
 		rType = 0;
 		vrLen = 854;
 		vrLoc = 0;
@@ -768,7 +781,7 @@
 		fRef = 2860E326111B887F00E27156 /* AppDelegate_iPhone.m */;
 		name = "AppDelegate_iPhone.m: 32";
 		rLen = 0;
-		rLoc = 970;
+		rLoc = 1008;
 		rType = 0;
 		vrLen = 1259;
 		vrLoc = 88;
@@ -778,7 +791,7 @@
 		fRef = 2860E326111B887F00E27156 /* AppDelegate_iPhone.m */;
 		name = "AppDelegate_iPhone.m: 34";
 		rLen = 0;
-		rLoc = 1005;
+		rLoc = 1043;
 		rType = 0;
 		vrLen = 1289;
 		vrLoc = 245;
@@ -788,7 +801,7 @@
 		fRef = 2860E326111B887F00E27156 /* AppDelegate_iPhone.m */;
 		name = "AppDelegate_iPhone.m: 48";
 		rLen = 0;
-		rLoc = 1436;
+		rLoc = 1937;
 		rType = 0;
 		vrLen = 1707;
 		vrLoc = 267;
@@ -798,7 +811,7 @@
 		fRef = 2860E326111B887F00E27156 /* AppDelegate_iPhone.m */;
 		name = "AppDelegate_iPhone.m: 48";
 		rLen = 0;
-		rLoc = 1436;
+		rLoc = 1937;
 		rType = 0;
 		vrLen = 1253;
 		vrLoc = 1974;
@@ -808,7 +821,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 79";
 		rLen = 0;
-		rLoc = 2441;
+		rLoc = 2489;
 		rType = 0;
 		vrLen = 1456;
 		vrLoc = 1472;
@@ -818,7 +831,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 136";
 		rLen = 0;
-		rLoc = 5077;
+		rLoc = 5744;
 		rType = 0;
 		vrLen = 1244;
 		vrLoc = 4545;
@@ -828,10 +841,140 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 136";
 		rLen = 0;
-		rLoc = 5077;
+		rLoc = 5744;
 		rType = 0;
 		vrLen = 1200;
 		vrLoc = 4542;
+	};
+	89E5D11D124312C10085821E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2860E326111B887F00E27156 /* AppDelegate_iPhone.m */;
+		name = "AppDelegate_iPhone.m: 46";
+		rLen = 0;
+		rLoc = 1620;
+		rType = 0;
+		vrLen = 1327;
+		vrLoc = 153;
+	};
+	89E5D11E124312C10085821E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2860E325111B887F00E27156 /* AppDelegate_iPhone.h */;
+		name = "AppDelegate_iPhone.h: 14";
+		rLen = 0;
+		rLoc = 330;
+		rType = 0;
+		vrLen = 398;
+		vrLoc = 0;
+	};
+	89E5D11F124312C10085821E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 89EAAEB01242D6B3002DBE09 /* RangeSlider.h */;
+		name = "RangeSlider.h: 21";
+		rLen = 0;
+		rLoc = 686;
+		rType = 0;
+		vrLen = 924;
+		vrLoc = 0;
+	};
+	89E5D120124312C10085821E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
+		name = "RangeSlider.m: 136";
+		rLen = 0;
+		rLoc = 5744;
+		rType = 0;
+		vrLen = 1292;
+		vrLoc = 4383;
+	};
+	89E5D121124312C10085821E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
+		name = "RangeSlider.m: 177";
+		rLen = 0;
+		rLoc = 7074;
+		rType = 0;
+		vrLen = 1015;
+		vrLoc = 5618;
+	};
+	89E5D126124313830085821E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
+		name = "RangeSlider.m: 118";
+		rLen = 0;
+		rLoc = 4616;
+		rType = 0;
+		vrLen = 1879;
+		vrLoc = 3458;
+	};
+	89E5D12A124313A80085821E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
+		name = "RangeSlider.m: 118";
+		rLen = 0;
+		rLoc = 4616;
+		rType = 0;
+		vrLen = 1879;
+		vrLoc = 3458;
+	};
+	89E5D12B124313A80085821E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2860E326111B887F00E27156 /* AppDelegate_iPhone.m */;
+		name = "AppDelegate_iPhone.m: 46";
+		rLen = 0;
+		rLoc = 1620;
+		rType = 0;
+		vrLen = 1327;
+		vrLoc = 153;
+	};
+	89E5D12C124313A80085821E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2860E326111B887F00E27156 /* AppDelegate_iPhone.m */;
+		name = "AppDelegate_iPhone.m: 27";
+		rLen = 0;
+		rLoc = 619;
+		rType = 0;
+		vrLen = 1424;
+		vrLoc = 265;
+	};
+	89E5D130124314C40085821E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2860E326111B887F00E27156 /* AppDelegate_iPhone.m */;
+		name = "AppDelegate_iPhone.m: 27";
+		rLen = 0;
+		rLoc = 619;
+		rType = 0;
+		vrLen = 1424;
+		vrLoc = 265;
+	};
+	89E5D131124314C40085821E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
+		name = "RangeSlider.m: 118";
+		rLen = 0;
+		rLoc = 4616;
+		rType = 0;
+		vrLen = 1879;
+		vrLoc = 3458;
+	};
+	89E5D132124314C40085821E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
+		name = "RangeSlider.m: 157";
+		rLen = 0;
+		rLoc = 5102;
+		rType = 0;
+		vrLen = 1713;
+		vrLoc = 3812;
+	};
+	89E5D136124315210085821E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
+		name = "RangeSlider.m: 186";
+		rLen = 0;
+		rLoc = 6116;
+		rType = 0;
+		vrLen = 1934;
+		vrLoc = 5467;
 	};
 	89EAAE9D1242D679002DBE09 /* RangeSlider */ = {
 		isa = PBXExecutable;
@@ -879,17 +1022,17 @@
 	};
 	89EAAEB01242D6B3002DBE09 /* RangeSlider.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1447, 481}}";
-			sepNavSelRange = "{375, 0}";
-			sepNavVisRange = "{0, 854}";
+			sepNavIntBoundsRect = "{{0, 0}, {1447, 476}}";
+			sepNavSelRange = "{686, 0}";
+			sepNavVisRange = "{0, 924}";
 			sepNavWindowFrame = "{{61, 105}, {1264, 906}}";
 		};
 	};
 	89EAAEB11242D6B3002DBE09 /* RangeSlider.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1223, 2249}}";
-			sepNavSelRange = "{5077, 0}";
-			sepNavVisRange = "{4542, 1200}";
+			sepNavIntBoundsRect = "{{0, 0}, {1651, 3081}}";
+			sepNavSelRange = "{6116, 0}";
+			sepNavVisRange = "{5467, 1934}";
 		};
 	};
 	89EAAEC61242DC29002DBE09 /* PBXTextBookmark */ = {
@@ -897,7 +1040,7 @@
 		fRef = 2860E325111B887F00E27156 /* AppDelegate_iPhone.h */;
 		name = "AppDelegate_iPhone.h: 13";
 		rLen = 0;
-		rLoc = 307;
+		rLoc = 330;
 		rType = 0;
 		vrLen = 375;
 		vrLoc = 0;
@@ -917,7 +1060,7 @@
 		fRef = 89EAAEB01242D6B3002DBE09 /* RangeSlider.h */;
 		name = "RangeSlider.h: 18";
 		rLen = 0;
-		rLoc = 566;
+		rLoc = 626;
 		rType = 0;
 		vrLen = 448;
 		vrLoc = 0;
@@ -927,7 +1070,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 49";
 		rLen = 0;
-		rLoc = 2927;
+		rLoc = 2975;
 		rType = 0;
 		vrLen = 1137;
 		vrLoc = 419;
@@ -937,7 +1080,7 @@
 		fRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */;
 		name = "RangeSlider.m: 90";
 		rLen = 0;
-		rLoc = 4262;
+		rLoc = 4730;
 		rType = 0;
 		vrLen = 1428;
 		vrLoc = 1429;

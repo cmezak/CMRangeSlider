@@ -22,13 +22,14 @@
 
 @implementation RangeSlider
 
-@synthesize min, max;
+@synthesize min, max, minimumRangeLength;
 
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, SLIDER_HEIGHT)])) {
 		
 		min = 0.0;
 		max = 1.0;
+		minimumRangeLength = 0.0;
 				
 		backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, SLIDER_HEIGHT)];
 		backgroundImageView.contentMode = UIViewContentModeScaleToFill;
@@ -110,13 +111,54 @@
 	float deltaX = [touch locationInView:self].x - [touch previousLocationInView:self].x;
 	
 	if (trackingSlider == minSlider) {
-		float newX = MAX(0,MIN(minSlider.frame.origin.x+deltaX,self.frame.size.width-CONTROL_WIDTH*2.0));
-		minSlider.frame = CGRectMake(newX, minSlider.frame.origin.y, minSlider.frame.size.width, minSlider.frame.size.height);
-		maxSlider.frame = CGRectMake(MAX(maxSlider.frame.origin.x,minSlider.frame.origin.x+CONTROL_WIDTH), maxSlider.frame.origin.y, CONTROL_WIDTH, CONTROL_HEIGHT);
+		
+		float newX = MAX(
+						 0,
+						 MIN(
+							 minSlider.frame.origin.x+deltaX,
+							 self.frame.size.width-CONTROL_WIDTH*2.0-minimumRangeLength*(self.frame.size.width-CONTROL_WIDTH*2.0))
+						 );
+		
+		minSlider.frame = CGRectMake(
+									 newX, 
+									 minSlider.frame.origin.y, 
+									 minSlider.frame.size.width, 
+									 minSlider.frame.size.height
+									 );
+		
+		maxSlider.frame = CGRectMake(
+									 MAX(
+										 maxSlider.frame.origin.x,
+										 minSlider.frame.origin.x+CONTROL_WIDTH+minimumRangeLength*(self.frame.size.width-CONTROL_WIDTH*2.0)
+										 ), 
+									 maxSlider.frame.origin.y, 
+									 CONTROL_WIDTH, 
+									 CONTROL_HEIGHT);
+		
 	} else if (trackingSlider == maxSlider) {
-		float newX = MAX(CONTROL_WIDTH,MIN(maxSlider.frame.origin.x+deltaX,self.frame.size.width-CONTROL_WIDTH));
-		maxSlider.frame = CGRectMake(newX, maxSlider.frame.origin.y, maxSlider.frame.size.width, maxSlider.frame.size.height);
-		minSlider.frame = CGRectMake(MIN(minSlider.frame.origin.x,maxSlider.frame.origin.x-CONTROL_WIDTH), minSlider.frame.origin.y, CONTROL_WIDTH, CONTROL_HEIGHT);
+		
+		float newX = MAX(
+						 CONTROL_WIDTH+minimumRangeLength*(self.frame.size.width-CONTROL_WIDTH*2.0),
+						 MIN(
+							 maxSlider.frame.origin.x+deltaX,
+							 self.frame.size.width-CONTROL_WIDTH)
+						 );
+		
+		maxSlider.frame = CGRectMake(
+									 newX, 
+									 maxSlider.frame.origin.y, 
+									 maxSlider.frame.size.width, 
+									 maxSlider.frame.size.height
+									 );
+		
+		minSlider.frame = CGRectMake(
+									 MIN(
+										 minSlider.frame.origin.x,
+										 maxSlider.frame.origin.x-CONTROL_WIDTH-minimumRangeLength*(self.frame.size.width-2.0*CONTROL_WIDTH)
+										 ), 
+									 minSlider.frame.origin.y, 
+									 CONTROL_WIDTH, 
+									 CONTROL_HEIGHT);
 	}
 	
 	[self calculateMinMax];
@@ -141,8 +183,8 @@
 }
 
 - (void)calculateMinMax {
-	float newMax = (maxSlider.frame.origin.x - CONTROL_WIDTH)/(self.frame.size.width-(2*CONTROL_WIDTH));
-	float newMin = minSlider.frame.origin.x/(self.frame.size.width-2.0*CONTROL_WIDTH);
+	float newMax = MIN(1,(maxSlider.frame.origin.x - CONTROL_WIDTH)/(self.frame.size.width-(2*CONTROL_WIDTH)));
+	float newMin = MAX(0,minSlider.frame.origin.x/(self.frame.size.width-2.0*CONTROL_WIDTH));
 	
 	if (newMin != min || newMax != max) {
 
@@ -152,6 +194,29 @@
 
 	}
 
+}
+
+- (void)setMinimumRangeLength:(CGFloat)length {
+	minimumRangeLength = MIN(1.0,MAX(length,0.0)); //length must be between 0 and 1
+	[self updateThumbViews];
+	[self updateTrackImageViews];
+}
+
+- (void)updateThumbViews {
+	
+	maxSlider.frame = CGRectMake(max*(self.frame.size.width-2*CONTROL_WIDTH)+CONTROL_WIDTH, 
+								 (SLIDER_HEIGHT-CONTROL_HEIGHT)/2.0, 
+								 CONTROL_WIDTH, 
+								 CONTROL_HEIGHT);
+	
+	minSlider.frame = CGRectMake(MIN(
+									 min*(self.frame.size.width-2*CONTROL_WIDTH),
+									 maxSlider.frame.origin.x-CONTROL_WIDTH-(minimumRangeLength*(self.frame.size.width-CONTROL_WIDTH*2.0))
+									 ), 
+								 (SLIDER_HEIGHT-CONTROL_HEIGHT)/2.0, 
+								 CONTROL_WIDTH, 
+								 CONTROL_HEIGHT);
+	
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {

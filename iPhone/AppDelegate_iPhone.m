@@ -22,6 +22,9 @@
     // Override point for customization after application launch.
 	
 	slider = [[RangeSlider alloc] initWithFrame:CGRectMake(10, 100, 300, 30)];
+	
+	slider.minimumRangeLength = 0.3;
+	
 	[slider setMinThumbImage:[UIImage imageNamed:@"sliderControl.png"]];
 	[slider setMaxThumbImage:[UIImage imageNamed:@"sliderControl.png"]];
 	UIImage *image;

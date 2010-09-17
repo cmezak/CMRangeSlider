@@ -282,7 +282,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {186, 709}}</string>
+							<string>{{0, 0}, {186, 964}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -294,14 +294,14 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {203, 727}}</string>
+						<string>{{0, 0}, {203, 982}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>112 145 1354 768 0 0 1920 1058 </string>
+						<string>0 35 1920 1023 0 0 1920 1058 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -331,15 +331,15 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>89E5D10612430EE70085821E</string>
+										<string>89E5D136124315210085821E</string>
 										<key>history</key>
 										<array>
 											<string>8971F9311242E4820068890B</string>
-											<string>8971F9331242E4820068890B</string>
 											<string>8971F9661242EB080068890B</string>
-											<string>8971F9D91242F3C40068890B</string>
-											<string>8971F9E01242F6E50068890B</string>
-											<string>8971F9E21242F6E50068890B</string>
+											<string>89E5D11E124312C10085821E</string>
+											<string>89E5D11F124312C10085821E</string>
+											<string>89E5D130124314C40085821E</string>
+											<string>89E5D131124314C40085821E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -351,14 +351,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1146, 531}}</string>
+								<string>{{0, 0}, {1712, 786}}</string>
 								<key>RubberWindowFrame</key>
-								<string>112 145 1354 768 0 0 1920 1058 </string>
+								<string>0 35 1920 1023 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>531pt</string>
+							<string>786pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -371,9 +371,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 536}, {1146, 191}}</string>
+								<string>{{0, 791}, {1712, 191}}</string>
 								<key>RubberWindowFrame</key>
-								<string>112 145 1354 768 0 0 1920 1058 </string>
+								<string>0 35 1920 1023 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -382,7 +382,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>1146pt</string>
+					<string>1712pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -537,7 +537,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>89E5D11112430EE70085821E</string>
+		<string>89E5D137124315210085821E</string>
+		<string>89E5D123124312C10085821E</string>
 		<string>89E5D11212430EE70085821E</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
@@ -545,7 +546,7 @@
 		<string>/Users/charliemezak/Documents/xcode/CMRangeSlider/RangeSlider.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>112 145 1354 768 0 0 1920 1058 </string>
+	<string>0 35 1920 1023 0 0 1920 1058 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
