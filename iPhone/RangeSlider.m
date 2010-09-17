@@ -27,6 +27,7 @@
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, SLIDER_HEIGHT)])) {
 		
+			// default values
 		min = 0.0;
 		max = 1.0;
 		minimumRangeLength = 0.0;
@@ -35,13 +36,11 @@
 		backgroundImageView.contentMode = UIViewContentModeScaleToFill;
 		[self addSubview:backgroundImageView];
 		
-		subRangeTrackImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, min*frame.size.width, SLIDER_HEIGHT)];
+		trackImageView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 0, frame.size.width-10, SLIDER_HEIGHT)];
 		inRangeTrackImageView = [[UIImageView alloc] initWithFrame:CGRectMake(min*frame.size.width, 0, (max-min)*frame.size.width, SLIDER_HEIGHT)];
-		superRangeTrackImageView = [[UIImageView alloc] initWithFrame:CGRectMake(max*frame.size.width, 0, frame.size.width-frame.size.width*max, SLIDER_HEIGHT)];
 		
-		[self addSubview:subRangeTrackImageView];
+		[self addSubview:trackImageView];
 		[self addSubview:inRangeTrackImageView];
-		[self addSubview:superRangeTrackImageView];
 		
 		[self setupSliders];
 				
@@ -76,17 +75,12 @@
 	maxSlider.image = image;	
 }
 
-- (void)setSubRangeTrackImage:(UIImage *)image {
-	subRangeTrackImageView.image = image;
-	NSLog(@"set subrange image view with stretchable imag with left cap %d", subRangeTrackImageView.image.leftCapWidth);
-}
-
 - (void)setInRangeTrackImage:(UIImage *)image {
 	inRangeTrackImageView.image = [image stretchableImageWithLeftCapWidth:image.size.width/2.0-2 topCapHeight:image.size.height-2];
 }
 
-- (void)setSuperRangeTrackImage:(UIImage *)image {
-	superRangeTrackImageView.image = [image stretchableImageWithLeftCapWidth:image.size.width/2.0-2 topCapHeight:image.size.height-2];
+- (void)setTrackImage:(UIImage *)image {
+	trackImageView.image = image;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -166,20 +160,24 @@
 }
 
 - (void)updateTrackImageViews {
-	subRangeTrackImageView.frame = CGRectMake(CONTROL_WIDTH*0.5,
-											  0,
-											  MAX(minSlider.frame.origin.x,subRangeTrackImageView.image.size.width),
-											  subRangeTrackImageView.frame.size.height);
-	
+
 	inRangeTrackImageView.frame = CGRectMake(minSlider.frame.origin.x+0.5*CONTROL_WIDTH,
 											 0,
 											 maxSlider.frame.origin.x-minSlider.frame.origin.x,
 											 inRangeTrackImageView.frame.size.height);
-	
-	superRangeTrackImageView.frame = CGRectMake(maxSlider.frame.origin.x+0.5*CONTROL_WIDTH,
-												0,
-												self.frame.size.width-maxSlider.frame.origin.x-CONTROL_WIDTH,
-												superRangeTrackImageView.frame.size.height);
+
+}
+
+- (void)setMin:(CGFloat)newMin {
+	min = MIN(1.0,MAX(0,newMin)); //value must be between 0 and 1
+	[self updateThumbViews];
+	[self updateTrackImageViews];
+}
+
+- (void)setMax:(CGFloat)newMax {
+	max = MIN(1.0,MAX(0,newMax)); //value must be between 0 and 1
+	[self updateThumbViews];
+	[self updateTrackImageViews];
 }
 
 - (void)calculateMinMax {
@@ -221,6 +219,7 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
 	[super touchesEnded:touches withEvent:event];
+	[self sendActionsForControlEvents:UIControlEventTouchUpInside];
 	trackingSlider = nil; //we are no longer tracking either slider
 }
 

@@ -331,15 +331,15 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>89E5D139124316440085821E</string>
+										<string>899D045012439D5600DC0DD4</string>
 										<key>history</key>
 										<array>
 											<string>8971F9311242E4820068890B</string>
 											<string>8971F9661242EB080068890B</string>
 											<string>89E5D11E124312C10085821E</string>
 											<string>89E5D11F124312C10085821E</string>
-											<string>89E5D130124314C40085821E</string>
-											<string>89E5D131124314C40085821E</string>
+											<string>899D044E12439D5600DC0DD4</string>
+											<string>899D044F12439D5600DC0DD4</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -351,14 +351,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1712, 786}}</string>
+								<string>{{0, 0}, {1712, 782}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 35 1920 1023 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>786pt</string>
+							<string>782pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -371,14 +371,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 791}, {1712, 191}}</string>
+								<string>{{0, 787}, {1712, 195}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 35 1920 1023 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>191pt</string>
+							<string>195pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -397,9 +397,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>89E5D10712430EE70085821E</string>
+				<string>899D045112439D5600DC0DD4</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>89E5D10812430EE70085821E</string>
+				<string>899D045212439D5600DC0DD4</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -537,10 +537,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>89E5D123124312C10085821E</string>
-		<string>89E5D11212430EE70085821E</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>89EAAEAA1242D687002DBE09</string>
 		<string>/Users/charliemezak/Documents/xcode/CMRangeSlider/RangeSlider.xcodeproj</string>
 	</array>
@@ -622,7 +618,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>89EAAEAA1242D687002DBE09</string>
-				<string>89E5D10912430EE70085821E</string>
+				<string>899D045312439D5600DC0DD4</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
