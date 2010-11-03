@@ -10,8 +10,6 @@
 #import <QuartzCore/QuartzCore.h>
 
 #define SLIDER_HEIGHT 30
-#define CONTROL_WIDTH 20
-#define CONTROL_HEIGHT 20
 
 @interface RangeSlider ()
 
@@ -27,6 +25,8 @@
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, SLIDER_HEIGHT)])) {
 		
+		self.clipsToBounds = NO;
+		
 			// default values
 		min = 0.0;
 		max = 1.0;
@@ -37,8 +37,11 @@
 		[self addSubview:backgroundImageView];
 		
 		trackImageView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 0, frame.size.width-10, SLIDER_HEIGHT)];
-		inRangeTrackImageView = [[UIImageView alloc] initWithFrame:CGRectMake(min*frame.size.width, 0, (max-min)*frame.size.width, SLIDER_HEIGHT)];
+		trackImageView.contentMode = UIViewContentModeScaleToFill;
 		
+		inRangeTrackImageView = [[UIImageView alloc] initWithFrame:CGRectMake(min*frame.size.width, 0, (max-min)*frame.size.width, SLIDER_HEIGHT)];
+		inRangeTrackImageView.contentMode = UIViewContentModeScaleToFill;
+
 		[self addSubview:trackImageView];
 		[self addSubview:inRangeTrackImageView];
 		
@@ -52,11 +55,11 @@
 
 - (void)setupSliders {
 	
-	minSlider = [[UIImageView alloc] initWithFrame:CGRectMake(min*self.frame.size.width, (SLIDER_HEIGHT-CONTROL_HEIGHT)/2.0, CONTROL_WIDTH, CONTROL_HEIGHT)];
+	minSlider = [[UIImageView alloc] initWithFrame:CGRectMake(min*self.frame.size.width, (SLIDER_HEIGHT-self.frame.size.height)/2.0, self.frame.size.height, self.frame.size.height)];
 	minSlider.backgroundColor = [UIColor whiteColor];
 	minSlider.contentMode = UIViewContentModeScaleToFill;
 	
-	maxSlider = [[UIImageView alloc] initWithFrame:CGRectMake(max*(self.frame.size.width-CONTROL_WIDTH), (SLIDER_HEIGHT-CONTROL_HEIGHT)/2.0, CONTROL_WIDTH, CONTROL_HEIGHT)];
+	maxSlider = [[UIImageView alloc] initWithFrame:CGRectMake(max*(self.frame.size.width-self.frame.size.height), (SLIDER_HEIGHT-self.frame.size.height)/2.0, self.frame.size.height, self.frame.size.height)];
 	maxSlider.backgroundColor = [UIColor whiteColor];
 	maxSlider.contentMode = UIViewContentModeScaleToFill;
 	
@@ -76,11 +79,15 @@
 }
 
 - (void)setInRangeTrackImage:(UIImage *)image {
+	trackImageView.frame = CGRectMake(inRangeTrackImageView.frame.origin.x,trackImageView.frame.origin.y, inRangeTrackImageView.frame.size.width, trackImageView.frame.size.height);
 	inRangeTrackImageView.image = [image stretchableImageWithLeftCapWidth:image.size.width/2.0-2 topCapHeight:image.size.height-2];
+	
 }
 
 - (void)setTrackImage:(UIImage *)image {
+	trackImageView.frame = CGRectMake(5, MAX((self.frame.size.height-image.size.height)/2.0,0), self.frame.size.width-10, MIN(self.frame.size.height,image.size.height));
 	trackImageView.image = image;
+	inRangeTrackImageView.frame = CGRectMake(inRangeTrackImageView.frame.origin.x,trackImageView.frame.origin.y,inRangeTrackImageView.frame.size.width,trackImageView.frame.size.height);
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -90,10 +97,8 @@
 	
 	if (CGRectContainsPoint(minSlider.frame, [touch locationInView:self])) { //if touch is beginning on min slider
 		trackingSlider = minSlider;
-		NSLog(@"tracking min slider");
 	} else if (CGRectContainsPoint(maxSlider.frame, [touch locationInView:self])) { //if touch is beginning on max slider
 		trackingSlider = maxSlider;
-		NSLog(@"tracking max slider");
 	}
 }
 
@@ -110,7 +115,7 @@
 						 0,
 						 MIN(
 							 minSlider.frame.origin.x+deltaX,
-							 self.frame.size.width-CONTROL_WIDTH*2.0-minimumRangeLength*(self.frame.size.width-CONTROL_WIDTH*2.0))
+							 self.frame.size.width-self.frame.size.height*2.0-minimumRangeLength*(self.frame.size.width-self.frame.size.height*2.0))
 						 );
 		
 		minSlider.frame = CGRectMake(
@@ -123,19 +128,19 @@
 		maxSlider.frame = CGRectMake(
 									 MAX(
 										 maxSlider.frame.origin.x,
-										 minSlider.frame.origin.x+CONTROL_WIDTH+minimumRangeLength*(self.frame.size.width-CONTROL_WIDTH*2.0)
+										 minSlider.frame.origin.x+self.frame.size.height+minimumRangeLength*(self.frame.size.width-self.frame.size.height*2.0)
 										 ), 
 									 maxSlider.frame.origin.y, 
-									 CONTROL_WIDTH, 
-									 CONTROL_HEIGHT);
+									 self.frame.size.height, 
+									 self.frame.size.height);
 		
 	} else if (trackingSlider == maxSlider) {
 		
 		float newX = MAX(
-						 CONTROL_WIDTH+minimumRangeLength*(self.frame.size.width-CONTROL_WIDTH*2.0),
+						 self.frame.size.height+minimumRangeLength*(self.frame.size.width-self.frame.size.height*2.0),
 						 MIN(
 							 maxSlider.frame.origin.x+deltaX,
-							 self.frame.size.width-CONTROL_WIDTH)
+							 self.frame.size.width-self.frame.size.height)
 						 );
 		
 		maxSlider.frame = CGRectMake(
@@ -148,11 +153,11 @@
 		minSlider.frame = CGRectMake(
 									 MIN(
 										 minSlider.frame.origin.x,
-										 maxSlider.frame.origin.x-CONTROL_WIDTH-minimumRangeLength*(self.frame.size.width-2.0*CONTROL_WIDTH)
+										 maxSlider.frame.origin.x-self.frame.size.height-minimumRangeLength*(self.frame.size.width-2.0*self.frame.size.height)
 										 ), 
 									 minSlider.frame.origin.y, 
-									 CONTROL_WIDTH, 
-									 CONTROL_HEIGHT);
+									 self.frame.size.height, 
+									 self.frame.size.height);
 	}
 	
 	[self calculateMinMax];
@@ -161,8 +166,8 @@
 
 - (void)updateTrackImageViews {
 
-	inRangeTrackImageView.frame = CGRectMake(minSlider.frame.origin.x+0.5*CONTROL_WIDTH,
-											 0,
+	inRangeTrackImageView.frame = CGRectMake(minSlider.frame.origin.x+0.5*self.frame.size.height,
+											 inRangeTrackImageView.frame.origin.y,
 											 maxSlider.frame.origin.x-minSlider.frame.origin.x,
 											 inRangeTrackImageView.frame.size.height);
 
@@ -181,8 +186,8 @@
 }
 
 - (void)calculateMinMax {
-	float newMax = MIN(1,(maxSlider.frame.origin.x - CONTROL_WIDTH)/(self.frame.size.width-(2*CONTROL_WIDTH)));
-	float newMin = MAX(0,minSlider.frame.origin.x/(self.frame.size.width-2.0*CONTROL_WIDTH));
+	float newMax = MIN(1,(maxSlider.frame.origin.x - self.frame.size.height)/(self.frame.size.width-(2*self.frame.size.height)));
+	float newMin = MAX(0,minSlider.frame.origin.x/(self.frame.size.width-2.0*self.frame.size.height));
 	
 	if (newMin != min || newMax != max) {
 
@@ -202,18 +207,18 @@
 
 - (void)updateThumbViews {
 	
-	maxSlider.frame = CGRectMake(max*(self.frame.size.width-2*CONTROL_WIDTH)+CONTROL_WIDTH, 
-								 (SLIDER_HEIGHT-CONTROL_HEIGHT)/2.0, 
-								 CONTROL_WIDTH, 
-								 CONTROL_HEIGHT);
+	maxSlider.frame = CGRectMake(max*(self.frame.size.width-2*self.frame.size.height)+self.frame.size.height, 
+								 (SLIDER_HEIGHT-self.frame.size.height)/2.0, 
+								 self.frame.size.height, 
+								 self.frame.size.height);
 	
 	minSlider.frame = CGRectMake(MIN(
-									 min*(self.frame.size.width-2*CONTROL_WIDTH),
-									 maxSlider.frame.origin.x-CONTROL_WIDTH-(minimumRangeLength*(self.frame.size.width-CONTROL_WIDTH*2.0))
+									 min*(self.frame.size.width-2*self.frame.size.height),
+									 maxSlider.frame.origin.x-self.frame.size.height-(minimumRangeLength*(self.frame.size.width-self.frame.size.height*2.0))
 									 ), 
-								 (SLIDER_HEIGHT-CONTROL_HEIGHT)/2.0, 
-								 CONTROL_WIDTH, 
-								 CONTROL_HEIGHT);
+								 (SLIDER_HEIGHT-self.frame.size.height)/2.0, 
+								 self.frame.size.height, 
+								 self.frame.size.height);
 	
 }
 
