@@ -21,7 +21,7 @@
     	
 	slider = [[RangeSlider alloc] initWithFrame:CGRectMake(10, 100, 300, 30)]; // the slider enforces a height of 30, although I'm not sure that this is necessary
 	
-	slider.minimumRangeLength = 0.3; // this property enforces a minimum range size. By default it is set to 0.0
+	slider.minimumRangeLength = 03.; // this property enforces a minimum range size. By default it is set to 0.0
 	
 	[slider setMinThumbImage:[UIImage imageNamed:@"sliderControl.png"]]; // the two thumb controls are given custom images
 	[slider setMaxThumbImage:[UIImage imageNamed:@"sliderControl.png"]];
@@ -31,14 +31,11 @@
 	
 	image = [UIImage imageNamed:@"subRangeTrack.png"];
 	image = [image stretchableImageWithLeftCapWidth:image.size.width-2 topCapHeight:3];
-	[slider setSubRangeTrackImage:image];
+	[slider setTrackImage:image];
 	
 	image = [UIImage imageNamed:@"inRangeTrack.png"];
 	[slider setInRangeTrackImage:image];
-	
-	image = [UIImage imageNamed:@"superRangeTrack.png"];
-	image = [image stretchableImageWithLeftCapWidth:3 topCapHeight:0];
-	[slider setSuperRangeTrackImage:image];
+
 	
 	[slider addTarget:self action:@selector(report:) forControlEvents:UIControlEventValueChanged]; // The slider sends actions when the value of the minimum or maximum changes
 	
@@ -59,7 +56,7 @@
 - (void)report:(RangeSlider *)sender {
 	NSString *report = [NSString stringWithFormat:@"current slider range is %f to %f", sender.min, sender.max];
 	reportLabel.text = report;
-	NSLog(report);
+	NSLog(@"%@",report);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

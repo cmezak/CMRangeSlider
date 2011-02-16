@@ -20,7 +20,7 @@
 		8971F9D41242F2C70068890B /* superRangeTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 8971F9D11242F2C70068890B /* superRangeTrack.png */; };
 		8971F9D51242F2C70068890B /* subRangeTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 8971F9D21242F2C70068890B /* subRangeTrack.png */; };
 		8971F9D61242F2C70068890B /* inRangeTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 8971F9D31242F2C70068890B /* inRangeTrack.png */; };
-		89EAAEB21242D6B3002DBE09 /* RangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EAAEB11242D6B3002DBE09 /* RangeSlider.m */; };
+		899E8854130C39BC00F0E7D8 /* RangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 899E8853130C39BC00F0E7D8 /* RangeSlider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,8 +41,8 @@
 		8971F9D11242F2C70068890B /* superRangeTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = superRangeTrack.png; sourceTree = "<group>"; };
 		8971F9D21242F2C70068890B /* subRangeTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = subRangeTrack.png; sourceTree = "<group>"; };
 		8971F9D31242F2C70068890B /* inRangeTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inRangeTrack.png; sourceTree = "<group>"; };
-		89EAAEB01242D6B3002DBE09 /* RangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RangeSlider.h; sourceTree = "<group>"; };
-		89EAAEB11242D6B3002DBE09 /* RangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RangeSlider.m; sourceTree = "<group>"; };
+		899E8852130C39BC00F0E7D8 /* RangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RangeSlider.h; sourceTree = "<group>"; };
+		899E8853130C39BC00F0E7D8 /* RangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RangeSlider.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* RangeSlider-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RangeSlider-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,9 +73,9 @@
 			children = (
 				2860E325111B887F00E27156 /* AppDelegate_iPhone.h */,
 				2860E326111B887F00E27156 /* AppDelegate_iPhone.m */,
+				899E8852130C39BC00F0E7D8 /* RangeSlider.h */,
+				899E8853130C39BC00F0E7D8 /* RangeSlider.m */,
 				2860E327111B887F00E27156 /* MainWindow_iPhone.xib */,
-				89EAAEB01242D6B3002DBE09 /* RangeSlider.h */,
-				89EAAEB11242D6B3002DBE09 /* RangeSlider.m */,
 				8971F92D1242E4450068890B /* sliderControl.png */,
 				8971F9601242E7B20068890B /* sliderBar.png */,
 				8971F9D11242F2C70068890B /* superRangeTrack.png */,
@@ -204,7 +204,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				2860E328111B887F00E27156 /* AppDelegate_iPhone.m in Sources */,
 				2860E32E111B888700E27156 /* AppDelegate_iPad.m in Sources */,
-				89EAAEB21242D6B3002DBE09 /* RangeSlider.m in Sources */,
+				899E8854130C39BC00F0E7D8 /* RangeSlider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

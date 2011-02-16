@@ -21,7 +21,6 @@
 @property (nonatomic) CGFloat min, max, minimumRangeLength;
 - (void)setMinThumbImage:(UIImage *)image;
 - (void)setMaxThumbImage:(UIImage *)image;
-- (void)setSuperRangeTrackImage:(UIImage *)image;
-- (void)setSubRangeTrackImage:(UIImage *)image;
+- (void)setTrackImage:(UIImage *)image;
 - (void)setInRangeTrackImage:(UIImage *)image;
 @end
