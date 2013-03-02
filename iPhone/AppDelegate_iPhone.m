@@ -21,7 +21,7 @@
     	
 	slider = [[RangeSlider alloc] initWithFrame:CGRectMake(10, 100, 300, 30)]; // the slider enforces a height of 30, although I'm not sure that this is necessary
 	
-	slider.minimumRangeLength = 03.; // this property enforces a minimum range size. By default it is set to 0.0
+	slider.minimumRangeLength = .03; // this property enforces a minimum range size. By default it is set to 0.0
 	
 	[slider setMinThumbImage:[UIImage imageNamed:@"sliderControl.png"]]; // the two thumb controls are given custom images
 	[slider setMaxThumbImage:[UIImage imageNamed:@"sliderControl.png"]];
