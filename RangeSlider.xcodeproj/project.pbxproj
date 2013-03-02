@@ -21,6 +21,7 @@
 		8971F9D51242F2C70068890B /* subRangeTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 8971F9D21242F2C70068890B /* subRangeTrack.png */; };
 		8971F9D61242F2C70068890B /* inRangeTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 8971F9D31242F2C70068890B /* inRangeTrack.png */; };
 		899E8854130C39BC00F0E7D8 /* RangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 899E8853130C39BC00F0E7D8 /* RangeSlider.m */; };
+		FAA0016E16E19A1E00260842 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA0016D16E19A1E00260842 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		899E8852130C39BC00F0E7D8 /* RangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RangeSlider.h; sourceTree = "<group>"; };
 		899E8853130C39BC00F0E7D8 /* RangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RangeSlider.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* RangeSlider-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RangeSlider-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		FAA0016D16E19A1E00260842 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				FAA0016D16E19A1E00260842 /* Default-568h@2x.png */,
 				2860E32A111B888700E27156 /* iPad */,
 				2860E324111B887F00E27156 /* iPhone */,
 				28EEBF621118D79A00187D67 /* Shared */,
@@ -191,6 +194,7 @@
 				8971F9D41242F2C70068890B /* superRangeTrack.png in Resources */,
 				8971F9D51242F2C70068890B /* subRangeTrack.png in Resources */,
 				8971F9D61242F2C70068890B /* inRangeTrack.png in Resources */,
+				FAA0016E16E19A1E00260842 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +225,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = RangeSlider_Prefix.pch;
 				INFOPLIST_FILE = "RangeSlider-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = RangeSlider;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -233,7 +239,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = RangeSlider_Prefix.pch;
 				INFOPLIST_FILE = "RangeSlider-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = RangeSlider;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
