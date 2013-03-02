@@ -23,17 +23,15 @@
 	
 	slider.minimumRangeLength = .03; // this property enforces a minimum range size. By default it is set to 0.0
 	
-	[slider setMinThumbImage:[UIImage imageNamed:@"sliderControl.png"]]; // the two thumb controls are given custom images
-	[slider setMaxThumbImage:[UIImage imageNamed:@"sliderControl.png"]];
+	[slider setMinThumbImage:[UIImage imageNamed:@"rangethumb.png"]]; // the two thumb controls are given custom images
+	[slider setMaxThumbImage:[UIImage imageNamed:@"rangethumb.png"]];
 	
 	
-	UIImage *image; // there are three track images, one for the region to the left of the minimum, one for the region within the range, and one for the region to the right of the maximum
+	UIImage *image; // there are two track images, one for the range "track", and one for the filled in region of the track between the slider thumbs
 	
-	image = [UIImage imageNamed:@"subRangeTrack.png"];
-	image = [image stretchableImageWithLeftCapWidth:image.size.width-2 topCapHeight:3];
-	[slider setTrackImage:image];
+	[slider setTrackImage:[[UIImage imageNamed:@"fullrange.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(9.0, 9.0, 9.0, 9.0)]];
 	
-	image = [UIImage imageNamed:@"inRangeTrack.png"];
+	image = [UIImage imageNamed:@"fillrange.png"];
 	[slider setInRangeTrackImage:image];
 
 	
