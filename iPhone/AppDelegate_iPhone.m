@@ -42,7 +42,7 @@
 	
 	reportLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 30, 310, 30)]; // a label to see the values of the slider in this demo
 	reportLabel.adjustsFontSizeToFitWidth = YES;
-	reportLabel.textAlignment = UITextAlignmentCenter;
+	reportLabel.textAlignment = NSTextAlignmentCenter;
 	[window addSubview:reportLabel];
 	NSString *report = [NSString stringWithFormat:@"current slider range is %f to %f", slider.min, slider.max];
 	reportLabel.text = report;
