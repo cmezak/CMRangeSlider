@@ -1,10 +1,10 @@
-	//
-	//  RangeSlider.m
-	//  RangeSlider
-	//
-	//  Created by Charlie Mezak on 9/16/10.
-	//  Copyright 2010 Natural Guides, LLC. All rights reserved.
-	//
+//
+//  RangeSlider.m
+//  RangeSlider
+//
+//  Created by Charlie Mezak on 9/16/10.
+//  Copyright 2010 Natural Guides, LLC. All rights reserved.
+//
 
 #import "RangeSlider.h"
 #import <QuartzCore/QuartzCore.h>
@@ -14,80 +14,74 @@
 @interface RangeSlider ()
 
 - (void)calculateMinMax;
-- (void)setupSliders;
 
 @end
 
 @implementation RangeSlider
+{
+    float _maxLength;
+    float _leftMargin;
+}
 
 @synthesize min, max, minimumRangeLength;
 
 - (id)initWithFrame:(CGRect)frame {
-    if ((self = [super initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, SLIDER_HEIGHT)])) {
+    if ((self = [super initWithFrame:frame])) {
 		
 		self.clipsToBounds = NO;
 		
-			// default values
+        // default values
 		min = 0.0;
 		max = 1.0;
 		minimumRangeLength = 0.0;
-				
-		backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, SLIDER_HEIGHT)];
+        
+		backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, self.frame.size.height)];
 		backgroundImageView.contentMode = UIViewContentModeScaleToFill;
 		[self addSubview:backgroundImageView];
-		
-		trackImageView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 0, frame.size.width-10, SLIDER_HEIGHT)];
-		trackImageView.contentMode = UIViewContentModeScaleToFill;
-		
-		inRangeTrackImageView = [[UIImageView alloc] initWithFrame:CGRectMake(min*frame.size.width, 0, (max-min)*frame.size.width, SLIDER_HEIGHT)];
-		inRangeTrackImageView.contentMode = UIViewContentModeScaleToFill;
 
-		[self addSubview:trackImageView];
-		[self addSubview:inRangeTrackImageView];
-		
-		[self setupSliders];
-				
-		[self updateTrackImageViews];
 		
 	}
     return self;
 }
 
-- (void)setupSliders {
+- (void)setMinThumbImage:(UIImage *)minImage maxThunbImage:(UIImage *)maxImage trackImage:(UIImage *)trackImage inRangeTrackImage:(UIImage *)inRangeTrackImage
+{
+    minSlider = [[UIImageView alloc] initWithImage:minImage];
+    CGRect minSliderFrame = minSlider.frame;
+    minSliderFrame.origin.x = 0;
+    minSliderFrame.origin.y = (self.bounds.size.height - minSliderFrame.size.height) / 2;
+    minSlider.frame = minSliderFrame;
+    [self addSubview:minSlider];
 	
-	minSlider = [[UIImageView alloc] initWithFrame:CGRectMake(min*self.frame.size.width, (SLIDER_HEIGHT-self.frame.size.height)/2.0, self.frame.size.height, self.frame.size.height)];
-	minSlider.backgroundColor = [UIColor whiteColor];
-	minSlider.contentMode = UIViewContentModeScaleToFill;
-	
-	maxSlider = [[UIImageView alloc] initWithFrame:CGRectMake(max*(self.frame.size.width-self.frame.size.height), (SLIDER_HEIGHT-self.frame.size.height)/2.0, self.frame.size.height, self.frame.size.height)];
-	maxSlider.backgroundColor = [UIColor whiteColor];
-	maxSlider.contentMode = UIViewContentModeScaleToFill;
-	
-	[self addSubview:minSlider];
-	[self addSubview:maxSlider];
-	
-}
+	maxSlider = [[UIImageView alloc] initWithImage:maxImage];
+    CGRect maxSliderFrame = maxSlider.frame;
+    maxSliderFrame.origin.x = self.bounds.size.width - maxSliderFrame.size.width/2;
+    maxSliderFrame.origin.y = (self.bounds.size.height - maxSliderFrame.size.height) / 2;
+    maxSlider.frame = maxSliderFrame;
+    [self addSubview:maxSlider];
 
-- (void)setMinThumbImage:(UIImage *)image {
-	minSlider.backgroundColor = [UIColor clearColor];
-	minSlider.image = image;	
-}
-
-- (void)setMaxThumbImage:(UIImage *)image {
-	maxSlider.backgroundColor = [UIColor clearColor];
-	maxSlider.image = image;	
-}
-
-- (void)setInRangeTrackImage:(UIImage *)image {
-	trackImageView.frame = CGRectMake(inRangeTrackImageView.frame.origin.x,trackImageView.frame.origin.y, inRangeTrackImageView.frame.size.width, trackImageView.frame.size.height);
-	inRangeTrackImageView.image = [image stretchableImageWithLeftCapWidth:image.size.width/2.0-2 topCapHeight:image.size.height-2];
-	
-}
-
-- (void)setTrackImage:(UIImage *)image {
-	trackImageView.frame = CGRectMake(5, MAX((self.frame.size.height-image.size.height)/2.0,0), self.frame.size.width-10, MIN(self.frame.size.height,image.size.height));
-	trackImageView.image = image;
-	inRangeTrackImageView.frame = CGRectMake(inRangeTrackImageView.frame.origin.x,trackImageView.frame.origin.y,inRangeTrackImageView.frame.size.width,trackImageView.frame.size.height);
+    trackImageView = [[UIImageView alloc] initWithImage:trackImage];
+    CGRect trackFrame = trackImageView.frame;
+    trackFrame.origin.x = minSlider.bounds.size.width / 2;
+    trackFrame.origin.y = (self.bounds.size.height - trackFrame.size.height) / 2;
+    trackFrame.size.width = self.bounds.size.width - minSlider.bounds.size.width/2 - maxSlider.bounds.size.width/2;
+    trackImageView.frame = trackFrame;
+    [self addSubview:trackImageView];
+    
+    inRangeTrackImageView = [[UIImageView alloc] initWithImage:inRangeTrackImage];
+    CGRect inRangeTrackFrame = inRangeTrackImageView.frame;
+    inRangeTrackFrame.origin.y = (self.bounds.size.height - inRangeTrackFrame.size.height) / 2;
+    inRangeTrackImageView.frame = inRangeTrackFrame;
+    [self addSubview:inRangeTrackImageView];
+    
+    [self bringSubviewToFront:minSlider];
+    [self bringSubviewToFront:maxSlider];
+    
+    _maxLength = trackImageView.frame.size.width;
+    _leftMargin = trackImageView.frame.origin.x;
+    
+    [self updateThumbViews];
+	[self updateTrackImageViews];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -112,53 +106,26 @@
 	if (trackingSlider == minSlider) {
 		
 		float newX = MAX(
-						 0,
+						 _leftMargin,
 						 MIN(
-							 minSlider.frame.origin.x+deltaX,
-							 self.frame.size.width-self.frame.size.height*2.0-minimumRangeLength*(self.frame.size.width-self.frame.size.height*2.0))
-						 );
+							 minSlider.center.x + deltaX,
+							 _leftMargin + (1-minimumRangeLength) * _maxLength
+                             ));
 		
-		minSlider.frame = CGRectMake(
-									 newX, 
-									 minSlider.frame.origin.y, 
-									 minSlider.frame.size.width, 
-									 minSlider.frame.size.height
-									 );
+        minSlider.center = CGPointMake(newX, minSlider.center.y);
 		
-		maxSlider.frame = CGRectMake(
-									 MAX(
-										 maxSlider.frame.origin.x,
-										 minSlider.frame.origin.x+self.frame.size.height+minimumRangeLength*(self.frame.size.width-self.frame.size.height*2.0)
-										 ), 
-									 maxSlider.frame.origin.y, 
-									 self.frame.size.height, 
-									 self.frame.size.height);
+        maxSlider.center = CGPointMake(MAX(maxSlider.center.x, minSlider.center.x + minimumRangeLength * _maxLength), maxSlider.center.y);
 		
 	} else if (trackingSlider == maxSlider) {
 		
-		float newX = MAX(
-						 self.frame.size.height+minimumRangeLength*(self.frame.size.width-self.frame.size.height*2.0),
-						 MIN(
-							 maxSlider.frame.origin.x+deltaX,
-							 self.frame.size.width-self.frame.size.height)
-						 );
-		
-		maxSlider.frame = CGRectMake(
-									 newX, 
-									 maxSlider.frame.origin.y, 
-									 maxSlider.frame.size.width, 
-									 maxSlider.frame.size.height
-									 );
-		
-		minSlider.frame = CGRectMake(
-									 MIN(
-										 minSlider.frame.origin.x,
-										 maxSlider.frame.origin.x-self.frame.size.height-minimumRangeLength*(self.frame.size.width-2.0*self.frame.size.height)
-										 ), 
-									 minSlider.frame.origin.y, 
-									 self.frame.size.height, 
-									 self.frame.size.height);
+        float newX = MAX(_leftMargin + minimumRangeLength*_maxLength, MIN(self.frame.size.width-maxSlider.frame.size.width/2, maxSlider.center.x+deltaX));
+        
+        maxSlider.center = CGPointMake(newX, maxSlider.center.y);
+        
+        minSlider.center = CGPointMake(MIN(minSlider.center.x, maxSlider.center.x-minimumRangeLength*_maxLength), minSlider.center.y);
 	}
+    
+    NSLog(@"%f", minSlider.center.x);
 	
 	[self calculateMinMax];
 	[self updateTrackImageViews];
@@ -166,9 +133,9 @@
 
 - (void)updateTrackImageViews {
 
-	inRangeTrackImageView.frame = CGRectMake(minSlider.frame.origin.x+0.5*self.frame.size.height,
+	inRangeTrackImageView.frame = CGRectMake(minSlider.center.x,
 											 inRangeTrackImageView.frame.origin.y,
-											 maxSlider.frame.origin.x-minSlider.frame.origin.x,
+											 maxSlider.center.x-minSlider.center.x,
 											 inRangeTrackImageView.frame.size.height);
 
 }
@@ -186,8 +153,8 @@
 }
 
 - (void)calculateMinMax {
-	float newMax = MIN(1,(maxSlider.frame.origin.x - self.frame.size.height)/(self.frame.size.width-(2*self.frame.size.height)));
-	float newMin = MAX(0,minSlider.frame.origin.x/(self.frame.size.width-2.0*self.frame.size.height));
+	float newMax = MIN(1, (maxSlider.center.x - _leftMargin) / _maxLength);
+    float newMin = MAX(0, (minSlider.center.x - _leftMargin) / _maxLength);
 	
 	if (newMin != min || newMax != max) {
 
@@ -207,18 +174,11 @@
 
 - (void)updateThumbViews {
 	
-	maxSlider.frame = CGRectMake(max*(self.frame.size.width-2*self.frame.size.height)+self.frame.size.height, 
-								 (SLIDER_HEIGHT-self.frame.size.height)/2.0, 
-								 self.frame.size.height, 
-								 self.frame.size.height);
-	
-	minSlider.frame = CGRectMake(MIN(
-									 min*(self.frame.size.width-2*self.frame.size.height),
-									 maxSlider.frame.origin.x-self.frame.size.height-(minimumRangeLength*(self.frame.size.width-self.frame.size.height*2.0))
-									 ), 
-								 (SLIDER_HEIGHT-self.frame.size.height)/2.0, 
-								 self.frame.size.height, 
-								 self.frame.size.height);
+    maxSlider.center = CGPointMake(_leftMargin + max*_maxLength, maxSlider.center.y);
+    minSlider.center = CGPointMake(MIN(
+                                       _leftMargin + min*_maxLength,
+                                       maxSlider.center.x - minimumRangeLength*_maxLength
+                                       ), minSlider.center.y);
 	
 }
 
