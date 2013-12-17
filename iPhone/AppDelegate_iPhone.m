@@ -19,21 +19,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     	
-	slider = [[RangeSlider alloc] initWithFrame:CGRectMake(10, 100, 300, 30)]; // the slider enforces a height of 30, although I'm not sure that this is necessary
+	slider = [[RangeSlider alloc] initWithFrame:CGRectMake(10, 100, 300, 130)];
 	
-	slider.minimumRangeLength = .03; // this property enforces a minimum range size. By default it is set to 0.0
-	
-	[slider setMinThumbImage:[UIImage imageNamed:@"rangethumb.png"]]; // the two thumb controls are given custom images
-	[slider setMaxThumbImage:[UIImage imageNamed:@"rangethumb.png"]];
-	
-	
-	UIImage *image; // there are two track images, one for the range "track", and one for the filled in region of the track between the slider thumbs
-	
-	[slider setTrackImage:[[UIImage imageNamed:@"fullrange.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(9.0, 9.0, 9.0, 9.0)]];
-	
-	image = [UIImage imageNamed:@"fillrange.png"];
-	[slider setInRangeTrackImage:image];
-
+	slider.minimumRangeLength = 0.25; // this property enforces a minimum range size. By default it is set to 0.0
+	  
+    UIImage *minImage = [UIImage imageNamed:@"rangethumb.png"];
+    UIImage *maxImage = [UIImage imageNamed:@"rangethumb.png"];
+    UIImage *trackImage = [[UIImage imageNamed:@"fullrange.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(9.0, 9.0, 9.0, 9.0)];
+    UIImage *inRangeTrackImage = [UIImage imageNamed:@"fillrange.png"];
+    [slider setMinThumbImage:minImage maxThunbImage:maxImage trackImage:trackImage inRangeTrackImage:inRangeTrackImage];
 	
 	[slider addTarget:self action:@selector(report:) forControlEvents:UIControlEventValueChanged]; // The slider sends actions when the value of the minimum or maximum changes
 	
